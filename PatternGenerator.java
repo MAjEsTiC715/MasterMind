@@ -11,7 +11,7 @@ public class PatternGenerator {
 	this.duplicates = duplicates;
     }
     
-    public String getCode(int codeLength, String colorBalls, String answer, boolean duplicates){
+    public String getCode(int codeLength, String colorBalls, String answer, boolean duplicates) {
 	Random rand = new Random();
 	
 	String answerList = "";
@@ -41,6 +41,10 @@ public class PatternGenerator {
 	    answer = a;
 	    return answer;
 	}
+    }
+
+    public String checkCode(String answer, String guess) {
+
     }
 
     public int getCodeLength() {
