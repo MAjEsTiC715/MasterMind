@@ -8,7 +8,9 @@ public class Player {
     }
 
     public String getGuess(String g) {
-	String g = 
+	Scanner reader = new Scanner(System.in);
+	System.out.println("Enter your guess: ");
+	g = reader.nextString();
 	return g;
     }
 }
