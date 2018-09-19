@@ -11,15 +11,11 @@ public class PatternGenerator {
 	this.duplicates = duplicates;
     }
     
-    public void setAnswer(String answer){
-	this.answer = answer;
-    }
-    
     public String getCode(int codeLength, String colorBalls, String answer, boolean duplicates){
 	Random rand = new Random();
 	
 	String answerList = "";
-	String checkList = "";
+	String checkList = "RBYPKGO";
 
 	if (duplicates == true) {
 	
@@ -34,20 +30,13 @@ public class PatternGenerator {
 	    return answer;
 	}
 	else  {
-	    for (int j = 0; j < codeLength; j++){
+	    for (int j = 0; j < codeLength; codeLength--){
 		int n = rand.nextInt(codeLength) + 0;
-		char c = colorBalls.charAt(n);
-		String s = Character.toString(c);
-		checkList += (c + "\t");
-		if (checkList.contains(s)) {
-		    System.out.println("why");
-		    //j--;
-		}
-		else {
-		    answerList += (c + "\t");
-		}
+		char c = checkList.charAt(n);
+		answerList += (c + "\t");
+		checkList = checkList.substring(0,n) + checkList.substring(n+1);
 	    }
-	    System.out.println(checkList + "\n" + answerList);
+	    //System.out.println(checkList + "\n" + answerList);
 	    String a = new String(answerList);
 	    answer = a;
 	    return answer;
