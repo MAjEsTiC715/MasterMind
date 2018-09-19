@@ -1,6 +1,4 @@
 import java.util.Random;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PatternGenerator {
     private int codeLength;
@@ -16,42 +14,40 @@ public class PatternGenerator {
     public void setAnswer(String answer){
 	this.answer = answer;
     }
-
-    public void setColorBalls(String colorBalls) {
-	this.colorBalls = colorBalls;
-    }
     
     public String getCode(int codeLength, String colorBalls, String answer, boolean duplicates){
 	Random rand = new Random();
 	
-	char[] answerList = {};
-	char[] checkList = {};
+	String answerList = "";
+	String checkList = "";
 
 	if (duplicates == true) {
 	
 	    for (int i = 0; i < codeLength; i++){
 		int n = rand.nextInt(codeLength) + 0;
 		char c = colorBalls.charAt(n);
-		answerList[i] += c;
+		answerList += (c + "\t");
 	    }
 	    String a = new String(answerList);
 	    answer = a;
 	    
 	    return answer;
 	}
-	else {
+	else  {
 	    for (int j = 0; j < codeLength; j++){
 		int n = rand.nextInt(codeLength) + 0;
 		char c = colorBalls.charAt(n);
-		checkList[j] += c;
-		if (checkList.equals(answerList)) {
+		String s = Character.toString(c);
+		checkList += (c + "\t");
+		if (checkList.contains(s)) {
 		    System.out.println("why");
-		    j--;
+		    //j--;
 		}
 		else {
-		    answerList[j] += c;
+		    answerList += (c + "\t");
 		}
 	    }
+	    System.out.println(checkList + "\n" + answerList);
 	    String a = new String(answerList);
 	    answer = a;
 	    return answer;
@@ -66,7 +62,11 @@ public class PatternGenerator {
 	return answer;
     }
 
-    public Boolean getDubplicates() {
+    public String getColorBalls() {
+	return colorBalls;
+    }
+
+    public Boolean getDuplicates() {
 	return duplicates;
     }
 }
