@@ -3,10 +3,9 @@ public class Test {
 	PatternGenerator play = new PatternGenerator(7, true);
 	
       	int l = play.getCodeLength();
-       	String a = play.getAnswer();
-       	String b = play.getColorBalls();
+       	char[] a = play.getAnswer();
 	boolean d = play.getDuplicates();
 	
-	System.out.println(play.getCode(l, b, a, d));
+	System.out.println(play.getCode(l, b, d));
     }
 }
