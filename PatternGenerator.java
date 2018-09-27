@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class PatternGenerator {
     private int codeLength;
@@ -12,58 +13,55 @@ public class PatternGenerator {
     private final char PINK = 'I';
     private final char TORQUOISE = 'T';
     private final char BROWN = 'W';
-    private char[] answer = {};
+    private char[] answer = new char [10];
     private boolean duplicates;
 
-    public PatternGenerator(int codeLength, boolean duplicates){
+    public PatternGenerator(int codeLength, boolean duplicates) {
 	this.codeLength = codeLength;
 	this.duplicates = duplicates;
     }
 
-    public void setAnswer(String answer) {
+    public void setAnswer(char[] answer) {
 	this.answer = answer;
     }
     
-    public String getCode(int codeLength, char[] answer, boolean duplicates) {
+    public char[] getCode(int codeLength, char[] answer, boolean duplicates) {
 	Random rand = new Random();
 
 	char [] colorBalls = {RED, BLUE, YELLOW, PURPLE, BLACK, GREEN, ORANGE, PINK, TORQUOISE, BROWN};
-	char [] answerList = {codeLength};
-	char [] checkList = {RED, BLUE, YELLOW, PURPLE, BLACK, GREEN, ORANGE, PINK, TORQUOISE, BROWN};
+	char [] checkList = new char [10];
 
 	if (duplicates == true) {
 	
 	    for (int i = 0; i < codeLength; i++){
 		int n = rand.nextInt(codeLength) + 0;
-		char c = colorBalls.get(n);
-		answerList[i] = c;
+		char c = colorBalls[n];
+		answer[i] = c;
 	    }
-	    answer = answerList;
 	    
 	    return answer;
 	}
 	else  {
-	    for (int j = 0; j < codeLength; codeLength--){
+	    for (int j = 0; j < codeLength; j++) {
 		int n = rand.nextInt(codeLength) + 0;
-		char c = colorBalls.get(n);
-		for (char ch : checkList) {
-		    answerList[j] = ch;
+		char c = colorBalls[n];
+		checkList[j] = c;
+		for (char x : checkList) {
+		    if (x != c) {
+			System.out.println("HELLO");
+			answer[j] = c;
+		    }
 		}
 	    }
-	    answer = answerList;
 	    return answer;
 	}
-    }
-
-    public String checkCode(char[] answer, String guess) {
-
     }
 
     public int getCodeLength() {
 	return codeLength;
     }
 
-    public String getAnswer() {
+    public char[] getAnswer() {
 	return answer;
     }
 
