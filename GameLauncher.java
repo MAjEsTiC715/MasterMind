@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.*;
 
 public class GameLauncher {
     public static void main (String[] args) {
@@ -27,11 +28,11 @@ public class GameLauncher {
 		ArrayList<Character> r = p.getCode(lengthCode, result, duplicates);
 		while (i < numOfGuess){
 		    String guess = h.getGuess();
-		    ArrayList<Character> c = h.check(guess, r, duplicates);
-		    if (c == r) {
-			System.out.println("You Win! The secret code was: " + r);
-		    }
-		    i++;
+		    ArrayList<String> c = h.check(guess, r, duplicates);
+		    //if (c == r().toStringArray()) {
+		    //	System.out.println("You Win! The secret code was: " + r);
+		    //}
+		    //i++;
 		}
 		System.out.println("Game Over! The secret code was: " + r);
 		
