@@ -13,7 +13,7 @@ public class PatternGenerator {
     private final char PINK = 'I';
     private final char TORQUOISE = 'T';
     private final char BROWN = 'W';
-    private char[] answer = new char [10];
+    private ArrayList<Character> answer = new ArrayList<Character>();
     private boolean duplicates;
 
     public PatternGenerator(int codeLength, boolean duplicates) {
@@ -21,35 +21,36 @@ public class PatternGenerator {
 	this.duplicates = duplicates;
     }
 
-    public void setAnswer(char[] answer) {
+    public void setAnswer(ArrayList<Character> answer) {
 	this.answer = answer;
     }
     
-    public char[] getCode(int codeLength, char[] answer, boolean duplicates) {
+    public ArrayList<Character> getCode(int codeLength, ArrayList<Character> answer, boolean duplicates) {
 	Random rand = new Random();
 
 	char [] colorBalls = {RED, BLUE, YELLOW, PURPLE, BLACK, GREEN, ORANGE, PINK, TORQUOISE, BROWN};
-	char [] checkList = new char [10];
+	ArrayList<Character> checkList = new ArrayList<Character>();
 
 	if (duplicates == true) {
 	
 	    for (int i = 0; i < codeLength; i++){
 		int n = rand.nextInt(codeLength) + 0;
 		char c = colorBalls[n];
-		answer[i] = c;
+		answer.add(c);
 	    }
 	    
 	    return answer;
 	}
 	else  {
-	    for (int j = 0; j < codeLength; j++) {
+	    int j = 0;
+	    while (j < codeLength) {
 		int n = rand.nextInt(codeLength) + 0;
 		char c = colorBalls[n];
-		checkList[j] = c;
+		checkList.add(c);
 		for (char x : checkList) {
-		    if (x != c) {
-			System.out.println("HELLO");
-			answer[j] = c;
+		    if (!answer.contains(x)) {
+			answer.add(c);
+			j++;
 		    }
 		}
 	    }
@@ -57,16 +58,8 @@ public class PatternGenerator {
 	}
     }
 
-    public int getCodeLength() {
-	return codeLength;
-    }
-
-    public char[] getAnswer() {
+    public ArrayList<Character> getAnswer() {
 	return answer;
-    }
-
-    public Boolean getDuplicates() {
-	return duplicates;
     }
 }
     

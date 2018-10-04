@@ -1,4 +1,5 @@
-java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Player {
     private String guess = "";
@@ -7,10 +8,15 @@ public class Player {
 	this.guess = g;
     }
 
-    public String getGuess(String g) {
-	Scanner reader = new Scanner(System.in);
-	System.out.println("Enter your guess: ");
-	g = reader.nextString();
+    public String getGuess() {
+	String g = "no guess";
 	return g;
     }
+
+    public ArrayList<String> check(String g, ArrayList<Character> r, boolean d) {
+	System.out.println("nothing to check");
+
+	ArrayList<String> nothing = new ArrayList<>();
+	return nothing;
+}
 }
