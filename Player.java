@@ -13,6 +13,11 @@ public class Player {
 	return g;
     }
 
+    public String getGuess(int codeLength, boolean duplicates) {
+	String g = "no guess";
+	return g;
+    }
+    
     public ArrayList<String> check(String g, ArrayList<Character> r, boolean d) {
 	System.out.println("nothing to check");
 

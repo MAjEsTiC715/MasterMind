@@ -19,15 +19,15 @@ public class GameLauncher {
 	System.out.print("How many guesses (Between 1 and 50): ");
 	numOfGuess = input.nextInt();
 
+	int i = 0;
+	PatternGenerator p = new PatternGenerator(lengthCode, duplicates);
+	ArrayList<Character> r = p.getCode(lengthCode, duplicates);
+	ArrayList<String> pegRes = new ArrayList<String>();
+
 	while (start != -1) {
 	    if (start == 1) {
-		int i = 0;
 		
 		Player h = new Human();
-		PatternGenerator p = new PatternGenerator(lengthCode, duplicates);
-		ArrayList<Character> result = p.getAnswer();
-		ArrayList<Character> r = p.getCode(lengthCode, result, duplicates);
-		ArrayList<String> pegRes = new ArrayList<String>();
 
 		for (int j = 0; j < r.size(); j++) {
 		    pegRes.add("Black");
@@ -46,6 +46,9 @@ public class GameLauncher {
 		System.out.println("Game Over! The secret code was: " + r);
 		start = -1;
 		
+	    }
+	    if (start == 2) {
+		Player rand = new Random();
 	    }
 	}
     }

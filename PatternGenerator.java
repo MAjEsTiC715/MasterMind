@@ -13,21 +13,17 @@ public class PatternGenerator {
     private final char PINK = 'I';
     private final char TORQUOISE = 'T';
     private final char BROWN = 'W';
-    private ArrayList<Character> answer = new ArrayList<Character>();
     private boolean duplicates;
 
     public PatternGenerator(int codeLength, boolean duplicates) {
 	this.codeLength = codeLength;
 	this.duplicates = duplicates;
     }
-
-    public void setAnswer(ArrayList<Character> answer) {
-	this.answer = answer;
-    }
     
-    public ArrayList<Character> getCode(int codeLength, ArrayList<Character> answer, boolean duplicates) {
+    public ArrayList<Character> getCode(int codeLength, boolean duplicates) {
 	Random rand = new Random();
 
+	ArrayList<Character> answer = new ArrayList<Character>();
 	char [] colorBalls = {RED, BLUE, YELLOW, PURPLE, BLACK, GREEN, ORANGE, PINK, TORQUOISE, BROWN};
 	ArrayList<Character> checkList = new ArrayList<Character>();
 
@@ -56,10 +52,6 @@ public class PatternGenerator {
 	    }
 	    return answer;
 	}
-    }
-
-    public ArrayList<Character> getAnswer() {
-	return answer;
     }
 }
     
