@@ -12,9 +12,9 @@ public class Player {
 	return guess;
     }
 
-    public String getGuessR(int cl, int d) {
-    	return guess;
-    }
+    //public String getGuess(int cl, int d) {
+    //	return guess;
+    //}
 
     public ArrayList<String> check(ArrayList<Character> answer) {
 	ArrayList<Character> tempG = new ArrayList<Character>();
