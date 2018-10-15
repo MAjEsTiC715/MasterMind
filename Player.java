@@ -13,7 +13,13 @@ public class Player {
     }
 
     public String getGuessR(int cl, int d) {
-    	return guess;
+	String randomG = "";
+    	return randomG;
+    }
+
+    public String getGuessH() {
+	String humanG = "";
+	return humanG;
     }
 
     public ArrayList<String> check(ArrayList<Character> answer) {

@@ -4,12 +4,11 @@ import java.io.*;
 
 public class Human extends Player {
     @Override
-    public String getGuess() {
-	String g;
+    public String getGuessH() {
+	String guess;
 	Scanner input = new Scanner(System.in);
 	System.out.println("Enter you guess: ");
-	g = input.nextLine();
-	System.out.println("Guess who" + g);
-	return g;
+	guess = input.nextLine();
+	return guess;
     }
 }

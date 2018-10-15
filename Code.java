@@ -51,7 +51,7 @@ public class Code {
 	
 	if (getDuplicate() == true) {
 	    for (int i = 0; i < getCodeLength(); i++) {
-		int n = rand.nextInt(getCodeLength()) + 0;
+		int n = rand.nextInt(10);
 		char c = colorBalls[n];
 		answer.add(c);
 	    }
@@ -59,7 +59,7 @@ public class Code {
 	else if (getDuplicate() == false) {
 	    int j = 0;
 	    while (j < getCodeLength()) {
-		int n = rand.nextInt(getCodeLength()) + 0;
+		int n = rand.nextInt(10);
 		char c = colorBalls[n];
 		checkList.add(c);
 		for (char x : checkList) {
@@ -69,9 +69,7 @@ public class Code {
 		    }
 		}
 	    }
-	    System.out.println("YES");
 	}
-	
 	return answer;
     }
 }

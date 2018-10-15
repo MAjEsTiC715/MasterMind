@@ -58,7 +58,7 @@ public class MasterMind {
 	boolean validInput = false;
 	do {
 	    if (player == 1) {
-		String guess = human.getGuess();
+		String guess = human.getGuessH();
 		human.setGuess(guess);
 		validInput = true;
 	    }
@@ -75,15 +75,13 @@ public class MasterMind {
 
     public void updateGame(ArrayList<Character> result, int player, ArrayList<String> pegs, ArrayList<String> checkRes) {
 	if (player == 1) {
-	    System.out.println("Hello");
 	    checkRes = human.check(result);
 	    if (checkRes.equals(pegs)) {
 		System.out.println("You Win! The secret code was: " + result);
 		finish = true;
 	    }
 	    else {
-		System.out.print("nothing");
-		System.out.println(checkRes);
+		System.out.println("Pegs: "+ checkRes);
 	    }
 	    
 	}
@@ -94,7 +92,7 @@ public class MasterMind {
 		finish = true;
 	    }
 	    else {
-		System.out.println(checkRes);
+		System.out.println("Pegs: " + checkRes);
 	    }
 	}
 	if (player == 3) {
