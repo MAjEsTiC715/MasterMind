@@ -21,7 +21,7 @@ public class MasterMind {
     private ArrayList<Character> result = new ArrayList<>();
 
     /** Constructor to setup the game */
-    public MasterMind(int player, int codeLength, int tries, int duplicate) {
+    public MasterMind(int codeLength, int duplicate, int tries, int player) {
 	// Initialize the player and history objects 
 	initGame(player, codeLength, tries, duplicate);
 	

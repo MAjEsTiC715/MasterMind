@@ -53,9 +53,9 @@ public class TestClass {
 	// Test mastermind object
 	if (entry == 3) {
 	    System.out.println("MasterMind as normal");
-	    new MasterMind(2, 5, 15, 1);
+	    new MasterMind(5, 1, 15, 2);
 	    System.out.println("MasterMind with more than 50 tries or less than 1");
-	    new MasterMind(2, 5, 51, 1);
+	    new MasterMind(5, 1, 51, 2);
 	    System.out.println("THE END");
 	}
 	// Test history object

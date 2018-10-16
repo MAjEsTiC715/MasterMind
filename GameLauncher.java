@@ -1,11 +1,11 @@
 public class GameLauncher {
     // Create an instance of MasterMind and runs it
     public static void main(String[] args) {
-	int player = Integer.parseInt(args[0]);
-	int codeLength = Integer.parseInt(args[1]);
+	int codeLength = Integer.parseInt(args[0]);
+	int duplicate = Integer.parseInt(args[1]);
 	int tries = Integer.parseInt(args[2]);
-	int duplicate = Integer.parseInt(args[3]);
+	int player = Integer.parseInt(args[3]);
 	
-	new MasterMind(player, codeLength, tries, duplicate);
+	new MasterMind(codeLength, duplicate, tries, player);
     }
 }
