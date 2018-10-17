@@ -11,7 +11,7 @@ public class Code {
     private final char BLUE = 'B';
     private final char YELLOW = 'Y';
     private final char PURPLE = 'P';
-    private final char BLACK = 'B';
+    private final char BLACK = 'K';
     private final char GREEN = 'G';
     private final char ORANGE = 'O';
     private final char INDIGO = 'I';
